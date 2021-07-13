@@ -1,0 +1,31 @@
+.wrap {
+    max-height: 80px;
+    border: 1px solid;
+    overflow: hidden;
+}
+.inner {
+    position: relative;
+}
+.inner::after {
+    position: absolute;
+    content: '......';
+    right: 50px;
+    bottom: 0;
+    line-height: 30px;
+    height: 90px;
+}
+.in,
+.out {
+    display: none;
+    cursor: pointer;
+}
+
+.checked {
+    max-height: 200px;
+}
+.checked .inner::after {
+    content: '';
+}
+.choosed {
+    display: block;
+}
