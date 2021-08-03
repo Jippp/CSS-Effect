@@ -1,7 +1,17 @@
 /* 需要自己计算每个字或每次要出现的宽度来模拟打字的效果 */
 @keyframes typing { 
-  0% {
+  /* 0% {
     width: 0
+  }
+  100% {
+    width: 20ch
+  } */
+
+  0% {
+    height: 0
+  }
+  100% {
+    height: 20ch
   }
 }
 
@@ -13,15 +23,22 @@
 }
 
 div {
-  font-size: 20px;
-  /* 模拟鼠标样式 */
-	border-right: .1em solid black;
-	width: 200px;
+  /* 字体横向 */
+  writing-mode: vertical-lr;
+  /* 设为等宽字体 */
+  font-family: monospace;
+  /* 1个ch单位一个等宽字符0的大小 */
+  font-size: 2ch;
+  /* 模拟插入符样式 */
+	/* border-right: .1em solid black; */
+  border-bottom: .1em solid;
+	/* width: 20ch; */
+  height: 20ch;
 	margin: 20px;
 	white-space: nowrap;
 	overflow: hidden;
 	animation:   
     /* steps() 是将动画分成几个步骤来执行，比如这个1，就是一次执行一次动画 */
-    typing 5s steps(10, end),
+    typing 7s steps(10, end),
     dance .7s step-end infinite alternate;
 }
