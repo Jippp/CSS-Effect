@@ -1,0 +1,32 @@
+.accordion-wrap {
+  margin: 30px 100px;
+  width: 450px;
+  height: 550px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.accordion-item {
+  float: left;
+  width: 10%;
+  height: 100%;
+  transition: all 1s;
+}
+
+.accordion-item img {
+  display: inline-block;
+  box-shadow: 2px 2px 8px 2px #000;
+  border-radius: 20px;
+  width: 380px;
+  height: 100%;
+}
+
+/* 注意下面两个的选择器权重一样或后面的大，后面的才能覆盖前面的 */
+.accordion-wrap:hover .accordion-item{
+  width: 5%;
+}
+
+.accordion-wrap:hover .accordion-item:hover {
+  width: 55%;
+}
