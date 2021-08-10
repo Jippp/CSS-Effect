@@ -1,0 +1,37 @@
+.wrap {
+  margin: 100px 0;
+  /* overflow: hidden; */
+}
+
+.content {
+  position: relative;
+  font-size: 7em;
+  color: #666;
+  border-radius: 20px;
+  background: #000;
+  letter-spacing: 5px;
+}
+
+.content::after {
+  content: attr(dot-content);
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #fff;
+  text-align: center;
+  background-size: 150px;
+  background-position: 50% 50%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  clip-path: ellipse(112px 100% at 10% 50%);
+  animation: contentMove 3s infinite alternate both;
+}
+
+@keyframes contentMove {
+  0% {
+    clip-path: ellipse(112px 100% at 10% 50%);
+  }
+  100% {
+    clip-path: ellipse(112px 100% at 90% 50%);
+  }
+}
