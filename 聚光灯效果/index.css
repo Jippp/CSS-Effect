@@ -6,10 +6,15 @@
 .content {
   position: relative;
   font-size: 7em;
-  color: #666;
+  letter-spacing: 5px;
+  margin: 0;
+}
+.content p {
+  height: 148px;
+  color: rgba(102,102,102, .3);
   border-radius: 20px;
   background: #000;
-  letter-spacing: 5px;
+  margin: 0;
 }
 
 .content::after {
@@ -17,21 +22,33 @@
   position: absolute;
   left: 0;
   top: 0;
+  height: 296px;
+  background-color: rgba(255, 68, 0, .6);
   color: #fff;
   text-align: center;
-  background-size: 150px;
+  /* background-size: 150px;
   background-position: 50% 50%;
   background-clip: text;
-  -webkit-background-clip: text;
-  clip-path: ellipse(112px 100% at 10% 50%);
-  animation: contentMove 3s infinite alternate both;
+  -webkit-background-clip: text; */
+  /* clip-path: ellipse(112px 112px at 10% 50%); */
+  clip-path: path('M0,40 A40,40,0,0,1,80,40 A40,40,0,0,1,160,40 Q160,95,80,150 Q0,95,0,40 Z');
+  animation: contentMove 3s ease-in-out infinite alternate both;
 }
 
-@keyframes contentMove {
+/* @keyframes contentMove {
   0% {
     clip-path: ellipse(112px 100% at 10% 50%);
   }
   100% {
     clip-path: ellipse(112px 100% at 90% 50%);
+  }
+} */
+
+@keyframes contentMove {
+  0% {
+    clip-path: path('M0,40 A40,40,0,0,1,80,40 A40,40,0,0,1,160,40 Q160,95,80,150 Q0,95,0,40 Z');
+  }
+  100% {
+    clip-path: path('M660,40 A40,40,0,0,1,740,40 A40,40,0,0,1,820,40 Q820,95,740,150 Q660,95,660,40 Z');
   }
 }
